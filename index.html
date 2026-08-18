@@ -129,24 +129,30 @@ body:not(.at-home) .mark{opacity:1;pointer-events:auto}
 .portrait .ring{position:absolute;inset:-12px;border-radius:50%;border:1px solid var(--hair);pointer-events:none}
 
 /* ================= HOME ================= */
-#home .inner{flex:1;display:flex;flex-direction:column;padding-top:min(4vh,28px)}
-.hero{display:grid;grid-template-columns:1fr auto;gap:clamp(36px,5vw,68px);align-items:center}
+#home .inner{flex:1;display:flex;flex-direction:column;padding-top:min(2.6vh,20px);padding-bottom:clamp(26px,4vh,48px)}
+.hero{display:grid;grid-template-columns:1fr auto;gap:clamp(36px,5vw,68px);align-items:center;margin-top:auto}
 .hero .portrait{width:clamp(190px,24vw,276px)}
 .hero .portrait .ring{inset:-15px}
 .hello{font-family:var(--display);font-weight:300;font-size:clamp(46px,7.2vw,92px);line-height:.9;letter-spacing:-.045em;margin:0}
 .cn{
   display:flex;align-items:center;gap:15px;flex-wrap:wrap;
   font-family:var(--body);font-weight:400;font-size:15px;
-  letter-spacing:.24em;color:var(--faint);margin-top:20px;
+  letter-spacing:.24em;color:var(--faint);margin-top:clamp(18px,5.4vh,60px);
 }
 .cn hr{width:22px;height:1px;background:var(--rule);border:0;margin:0;flex:none}
-.pitch{font-size:19px;line-height:1.55;max-width:36ch;margin:26px 0 0}
+.role{
+  font-family:var(--mono);font-size:11px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--mute);
+  margin:14px 0 0;max-width:44ch;line-height:1.75;
+}
+.role span{display:block}
+.pitch{font-size:20.5px;line-height:1.5;max-width:44ch;margin:clamp(22px,2.8vh,32px) 0 0}
 .pitch em{font-style:normal;color:var(--accent);font-weight:600}
 
 .status{
   display:inline-flex;align-items:center;gap:9px;
   font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--mute);margin-top:22px;padding:6px 13px 6px 11px;
+  color:var(--mute);margin-top:18px;padding:6px 13px 6px 11px;
   border:1px solid var(--rule);border-radius:99px;background:rgba(255,255,255,.45);
 }
 .pulse{width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
@@ -155,7 +161,7 @@ body:not(.at-home) .mark{opacity:1;pointer-events:auto}
   @keyframes beat{0%,100%{opacity:1}50%{opacity:.25}}
 }
 
-.social{display:flex;gap:8px;margin-top:26px}
+.social{display:flex;gap:8px;margin-top:20px}
 .social a{
   width:37px;height:37px;border:1px solid var(--rule);border-radius:50%;
   display:grid;place-items:center;color:var(--mute);
@@ -165,9 +171,9 @@ body:not(.at-home) .mark{opacity:1;pointer-events:auto}
 .social svg{width:16px;height:16px;fill:currentColor}
 
 /* ================= THE STAFF ================= */
-.score{margin-top:auto;padding-top:52px}
+.score{margin-top:auto;padding-top:clamp(26px,4.5vh,52px)}
 .staff-wrap{position:relative;margin-bottom:8px}
-.field{position:relative;height:clamp(158px,21vh,206px);touch-action:manipulation}
+.field{position:relative;height:clamp(118px,16vh,168px);touch-action:manipulation}
 .field.composing{cursor:crosshair}
 .field .line{position:absolute;left:0;right:0;height:1px;background:var(--hair)}
 .field .barline{position:absolute;width:1px;background:var(--rule)}
@@ -370,6 +376,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .mode-btn{font-size:9.5px;letter-spacing:.08em}
   .pub-grid{grid-template-columns:1fr;gap:12px}
   .orgs{gap:20px}
+  .cn{margin-top:18px}
+  .role{font-size:10px;letter-spacing:.12em;margin-top:14px}
+  .pitch{font-size:18.5px;margin-top:22px}
   .deck{font-size:18px}
   .pub h3{font-size:20px}
   .dim span{display:none}
@@ -391,7 +400,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .hero .portrait .ring{inset:-10px}
   .hello{font-size:clamp(32px,5.6vw,54px)}
   .cn{margin-top:11px;font-size:13px;gap:12px}
-  .pitch{font-size:15.5px;margin-top:15px;max-width:40ch}
+  .role{margin-top:12px;font-size:10px;letter-spacing:.12em}
+  .pitch{font-size:16.5px;margin-top:17px;max-width:40ch}
   .status{margin-top:13px;font-size:10px}
   .social{margin-top:15px;gap:7px}
   .social a{width:32px;height:32px}
@@ -444,7 +454,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <div class="hero">
       <div>
         <h1 class="hello">Lang Shao<span class="cn"><span>邵 朗</span><hr><span>Samuel</span></span></h1>
-        <p class="pitch">Data science at Northeastern. I build the pipeline, fit the model, then build the thing people actually <em>look at</em>.</p>
+        <p class="role"><span>Data science &amp; mathematics student</span><span>Northeastern University</span></p>
+        <p class="pitch">I build the pipeline, fit the model, then build the thing people actually <em>look at</em>.</p>
         <div class="status"><span class="pulse"></span> Open to SWE · ML · Full-stack — May 2027</div>
 
         <nav class="social" aria-label="Elsewhere">
@@ -554,7 +565,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
           </ul>
         </div>
         <dl class="tblock">
-          <div class="row"><dt>Scale</dt><dd>2,000,000 polygons · 5 source datasets</dd></div>
+          <div class="row"><dt>Scale</dt><dd>2,091,488 polygons · 5 source datasets</dd></div>
           <div class="row"><dt>Role</dt><dd>Data engineering, modeling, front end — end to end</dd></div>
           <div class="row"><dt>Stack</dt><dd class="code">Python · GeoPandas · Pandas · scikit-learn · Plotly.js · D3.js</dd></div>
           <div class="row"><dt>Output</dt><dd>Unified GeoPackage + 20-view dashboard</dd></div>
@@ -575,7 +586,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
           </ul>
         </div>
         <dl class="tblock">
-          <div class="row"><dt>Scale</dt><dd>69,000 buildings · 6 survival models</dd></div>
+          <div class="row"><dt>Scale</dt><dd>69,128 buildings · 6 survival models</dd></div>
           <div class="row"><dt>Role</dt><dd>Pipeline, survival modeling, dashboard</dd></div>
           <div class="row"><dt>Stack</dt><dd class="code">Python · Lifelines · PyTorch (PyCox) · scikit-survival · Chart.js · Leaflet</dd></div>
           <div class="row"><dt>Output</dt><dd>Model comparison feeding a paper in preparation</dd></div>
@@ -739,12 +750,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <script>
 (function(){
 
-/* =====================================================================
-   YOUR OWN PHRASE
-   Switch the staff to "Write", place notes, hit Copy, paste the result
-   between the brackets below. It becomes a fifth thing the staff can hold.
-   Format: [step, row] — step 0-15 left to right, row 0 = top ledger line.
-   ===================================================================== */
+
 var MY_PHRASE = [];
 
 /* ---------- routing ---------- */
@@ -767,13 +773,7 @@ function render(){
 }
 window.addEventListener('hashchange', render);
 
-/* =====================================================================
-   NOTATION GEOMETRY
-   17 vertical positions. The five drawn lines sit at rows 4,6,8,10,12;
-   rows 0-3 and 13-16 are ledger positions above and below, exactly as
-   on paper. A note's row comes from its letter name, so Bb and B share
-   a position — which is how staves actually work.
-   ===================================================================== */
+
 var LETTER = {C:0,D:1,E:2,F:3,G:4,A:5,B:6};
 var NAMES  = ['C','D','E','F','G','A','B'];
 var SEMI   = {C:0,D:2,E:4,F:5,G:7,A:9,B:11};
@@ -801,15 +801,7 @@ function rowToMidi(row){                       /* for the writable mode */
 }
 function hz(midi, base){ return (base || 440) * Math.pow(2, (midi - 69) / 12); }
 
-/* =====================================================================
-   TWO SETS OF VOICINGS
-   Harmony only — chord progressions, no melody. Set one is diatonic to
-   A major with a chromatic bVI at the end; set two is a ii-V-I-VI loop
-   in Eb, a turnaround that predates all of us.
-   ===================================================================== */
-/* hold = how long this chord is allowed to sit there, in ms. Deliberately
-   uneven: there is no click behind this, so the phrasing breathes. The last
-   chord is the chromatic one, so it gets the longest breath before release. */
+
 var ROLLED = {
   base: 432,            /* the whole set sits a touch below concert pitch */
   beatsPer: 2,
@@ -1025,8 +1017,7 @@ function nodeAt(xPct, row){
 
 /* ---------- captions ---------- */
 function setCaption(){
-  /* Only Write mode needs words — the others explain themselves once you
-     press play, and a label nobody asked for is just noise. */
+
   caption.textContent = mode !== 'write' ? '' : (phrase.length
     ? 'Click a spot to add a note, click a note head to remove it · ' + phrase.length + ' notes'
     : 'Click anywhere on the staff to place a note');
@@ -1102,8 +1093,7 @@ function playRolled(set){
       strike(hz(p.midi, set.base), when, decay, level);
       vis(when, x, p.row, i);
 
-      /* gap to the next note: ~72ms down low, ~32ms up top. The jump from
-         the left hand into the right is the widest of all. */
+
       if(k < n - 1){
         var gap;
         if(k === 0 && ch.bass){
@@ -1164,8 +1154,7 @@ function playStruck(set){
       if(when > last) last = when;
     });
 
-    /* anticipation: the next chord arrives a sixteenth early and quietly,
-       which is what makes the loop lean forward instead of sitting down */
+
     if(cell < cells - 1){
       var nxt = (cell + 1) % set.chords.length;
       var w = S + (CELL - 1) * six + 0.006 + jitter(4);
