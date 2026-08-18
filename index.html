@@ -13,7 +13,7 @@
      absolute URL — swap in your real Pages address once it's live. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lang (Samuel) Shao">
-<meta property="og:description" content="Data science and Mathematics at Northeastern. Geospatial pipelines, survival models, and dashboards.">
+<meta property="og:description" content="Data science at Northeastern. Geospatial pipelines, survival models, and dashboards.">
 <meta property="og:image" content="https://samueeelsiu.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -251,6 +251,14 @@ body:not(.at-home) .mark{opacity:1;pointer-events:auto}
 .tblock dd{margin:0;font-size:14.5px;line-height:1.5}
 .tblock .code{font-family:var(--mono);font-size:11.5px;color:var(--mute);line-height:1.65}
 
+.demo{margin:30px 0 0}
+.demo .frame{border:1px solid var(--hair);background:var(--wash);overflow:hidden}
+.demo video,.demo img{display:block;width:100%;height:auto}
+.demo figcaption{
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--faint);margin-top:10px;line-height:1.7;
+}
+
 /* ================= EXPERIENCE ================= */
 .scale-row{
   display:flex;justify-content:space-between;
@@ -303,6 +311,11 @@ body:not(.at-home) .mark{opacity:1;pointer-events:auto}
 .pub h3{font-family:var(--body);font-style:italic;font-weight:600;font-size:23px;line-height:1.34;margin:0 0 10px;max-width:42ch}
 .byline{font-size:12.5px;color:var(--mute);margin:0 0 14px;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase}
 .byline b{color:var(--ink);font-weight:450}
+.contrib{margin:16px 0 0}
+.contrib span{
+  display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:5px;
+}
 
 /* ================= CONTACT / RESUME ================= */
 .big-mail{
@@ -459,7 +472,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <div class="status"><span class="pulse"></span> Open to SWE · ML · Full-stack — May 2027</div>
 
         <nav class="social" aria-label="Elsewhere">
-          <a href="https://www.linkedin.com/in/lang-shao/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <a href="https://linkedin.com/in/lang-shao-962637296" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.42 4.78 5.57V21h-4v-5.7c0-1.36-.03-3.1-1.9-3.1-1.9 0-2.2 1.47-2.2 3v5.8h-4V9z"/></svg>
           </a>
           <a href="https://github.com/samueeelsiu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
@@ -571,6 +584,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
           <div class="row"><dt>Output</dt><dd>Unified GeoPackage + 20-view dashboard</dd></div>
         </dl>
       </div>
+
+      <figure class="demo">
+        <div class="frame">
+          <video src="media/ma-dashboard.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <figcaption>The statewide dashboard — filtering by occupancy, material, and construction era</figcaption>
+      </figure>
     </article>
 
     <article class="entry">
@@ -592,6 +612,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
           <div class="row"><dt>Output</dt><dd>Model comparison feeding a paper in preparation</dd></div>
         </dl>
       </div>
+
+      <figure class="demo">
+        <div class="frame">
+          <video src="media/boston-dashboard.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <figcaption>The zoning deep-dive — demolished stock against buildings still standing</figcaption>
+      </figure>
     </article>
 
     <a class="back" href="#/">← Home</a>
@@ -602,31 +629,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <section class="page" id="publications">
   <div class="inner">
     <p class="eyebrow">Publications</p>
-    <h2 class="title">In preparation</h2>
-    <p class="deck">Two papers, both currently being written up...</p>
+    <h2 class="title">In progress</h2>
+    <p class="deck">Two papers: One is under review, the other is still being written.</p>
     <div class="datum" aria-hidden="true"><i></i><b></b></div>
 
     <article class="pub" style="padding-top:0">
       <div class="pub-grid">
-        <span class="tag">Manuscript<br>in prep<br>2026</span>
+        <span class="tag">Manuscript<br>under review<br>2026</span>
         <div>
-          <h3>The Life and Death of Buildings: A Survival Analysis of Urban Transformation in Greater Boston</h3>
+          <h3>Impact of Data Visualization on Sustainable Decision-Making in Structural Design</h3>
           <p class="byline">Melchiorre, J. · <b>Shao, L.</b> · Fang, D.</p>
-          <p>Treats demolition as a time-to-event outcome across 69K+ Boston buildings, comparing classical survival models against deep approaches to find which structural, zoning, and material factors predict how long a building lasts. My contribution: the geospatial pipeline, the survival modeling, and the analysis.</p>
+          <p>Asks whether the way sustainability data is presented changes what structural designers actually choose.</p>
+          <p class="contrib"><span>My contribution</span>The statistical analysis, and a number of the figures.</p>
         </div>
       </div>
     </article>
 
     <article class="pub">
       <div class="pub-grid">
-        <span class="tag">Manuscript<br>in prep<br>2026</span>
+        <span class="tag">Manuscript<br>in preparation<br>2026</span>
         <div>
-          <h3>Impact of Data Visualization on Sustainable Decision-Making in Structural Design</h3>
+          <h3>The Life and Death of Buildings: A Survival Analysis of Urban Transformation in Greater Boston</h3>
           <p class="byline">Melchiorre, J. · <b>Shao, L.</b> · Fang, D.</p>
-          <p>Asks whether the way sustainability data is presented changes what structural designers actually choose. My contribution: the statistical analysis, and the interactive dashboards used as study material.</p>
+          <p>Treats demolition as a time-to-event outcome across 69K+ Boston buildings, comparing classical survival models against deep approaches to find which structural, zoning, and material factors predict how long a building lasts.</p>
+          <p class="contrib"><span>My contribution</span>The geospatial pipeline, the survival modeling and analysis, and part of the writing and documentation.</p>
         </div>
       </div>
     </article>
+
 
     <a class="back" href="#/">← Home</a>
   </div>
@@ -714,7 +744,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
     <dl class="pairs">
       <div><dt>Based in</dt><dd>Cambridge, MA</dd></div>
-      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/lang-shao/" target="_blank" rel="noopener">lang-shao</a></dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://linkedin.com/in/lang-shao-962637296" target="_blank" rel="noopener">lang-shao</a></dd></div>
       <div><dt>GitHub</dt><dd><a href="https://github.com/samueeelsiu" target="_blank" rel="noopener">samueeelsiu</a></dd></div>
       <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/samueeel_siu/" target="_blank" rel="noopener">@samueeel_siu</a></dd></div>
       <div><dt>Languages</dt><dd>English · Mandarin · Cantonese</dd></div>
@@ -1234,6 +1264,17 @@ copyBtn.addEventListener('click', function(){
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(out).then(done, function(){ window.prompt('Copy this:', out); });
   }else{ window.prompt('Copy this:', out); }
+});
+
+document.querySelectorAll('.demo video').forEach(function(v){
+  v.addEventListener('error', function(){
+    var f = v.closest('.demo'); if (f) f.remove();
+  });
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    v.removeAttribute('autoplay');
+    v.pause();
+    v.setAttribute('controls', '');
+  }
 });
 
 scaffold();
