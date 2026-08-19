@@ -67,7 +67,7 @@ body::before{
 /* ================= HEADER ================= */
 .topbar{
   position:sticky;top:0;z-index:20;
-  background:linear-gradient(var(--ground) 60%, rgba(241,241,244,0));
+  background:linear-gradient(var(--ground) 82%, rgba(241,241,244,0));
 }
 .topbar .bar{
   width:100%;max-width:1120px;margin:0 auto;
@@ -251,13 +251,21 @@ body:not(.at-home) .mark{opacity:1;pointer-events:auto}
 .tblock dd{margin:0;font-size:14.5px;line-height:1.5}
 .tblock .code{font-family:var(--mono);font-size:11.5px;color:var(--mute);line-height:1.65}
 
-.demo{margin:30px 0 0}
-.demo .frame{border:1px solid var(--hair);background:var(--wash);overflow:hidden}
+.demo{margin:32px 0 0}
+.demo .frame{
+  display:block;border:1px solid var(--rule);background:#fff;overflow:hidden;
+  border-radius:10px;
+  transition:border-color .25s ease;
+}
+.demo a.frame:hover{border-color:var(--accent)}
 .demo video,.demo img{display:block;width:100%;height:auto}
 .demo figcaption{
+  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
   font-family:var(--mono);font-size:10px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--faint);margin-top:10px;line-height:1.7;
+  text-transform:uppercase;color:var(--faint);margin-top:11px;line-height:1.7;
 }
+.demo figcaption b{font-weight:400;color:var(--faint);white-space:nowrap;transition:color .25s ease}
+.demo:hover figcaption b{color:var(--accent)}
 
 /* ================= EXPERIENCE ================= */
 .scale-row{
@@ -586,10 +594,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       </div>
 
       <figure class="demo">
-        <div class="frame">
-          <video src="media/ma-dashboard.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        </div>
-        <figcaption>The statewide dashboard — filtering by occupancy, material, and construction era</figcaption>
+        <a class="frame" href="media/ma-distribution.webp" target="_blank" rel="noopener">
+          <img src="media/ma-distribution.webp" width="1600" height="860" loading="lazy"
+               alt="Massachusetts building distribution, coloured by occupancy class and sized by gross floor area">
+        </a>
+        <figcaption>
+          <span>One of 20+ views — statewide distribution, coloured by occupancy class, sized by gross floor area, filterable by material, foundation, cluster and decade</span>
+          <b>Open full size ↗</b>
+        </figcaption>
       </figure>
     </article>
 
@@ -614,10 +626,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       </div>
 
       <figure class="demo">
-        <div class="frame">
-          <video src="media/boston-dashboard.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        </div>
-        <figcaption>The zoning deep-dive — demolished stock against buildings still standing</figcaption>
+        <a class="frame" href="media/boston-zoning.webp" target="_blank" rel="noopener">
+          <img src="media/boston-zoning.webp" width="1600" height="1244" loading="lazy"
+               alt="Zoning district deep-dive comparing demolished and standing building stock in Boston">
+        </a>
+        <figcaption>
+          <span>One of 20+ views — the zoning deep-dive, comparing demolished stock against buildings still standing</span>
+          <b>Open full size ↗</b>
+        </figcaption>
       </figure>
     </article>
 
@@ -630,7 +646,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="inner">
     <p class="eyebrow">Publications</p>
     <h2 class="title">In progress</h2>
-    <p class="deck">Two papers: One is under review, the other is still being written.</p>
+    <p class="deck">Two papers. One is under review, the other is still being written.</p>
     <div class="datum" aria-hidden="true"><i></i><b></b></div>
 
     <article class="pub" style="padding-top:0">
@@ -1264,6 +1280,12 @@ copyBtn.addEventListener('click', function(){
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(out).then(done, function(){ window.prompt('Copy this:', out); });
   }else{ window.prompt('Copy this:', out); }
+});
+
+document.querySelectorAll('.demo img').forEach(function(im){
+  im.addEventListener('error', function(){
+    var f = im.closest('.demo'); if (f) f.remove();
+  });
 });
 
 document.querySelectorAll('.demo video').forEach(function(v){
